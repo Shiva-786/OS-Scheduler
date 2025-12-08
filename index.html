@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adaptive OS Scheduler — Demos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>⚡ Adaptive OS Scheduler</h1>
+    <p class="lead">Real-time scheduling algorithm simulator • Interactive demos • Educational tool</p>
+
+    <div class="cards">
+      <a class="card" href="schedulers/edf.html">
+        <div style="text-align:center;width:100%">
+          <div style="font-size:2.5rem;margin-bottom:12px">📅</div>
+          <h3>Earliest Deadline First</h3>
+          <p style="color:var(--muted);font-size:0.9rem;margin:8px 0">Priority based on deadline proximity</p>
+        </div>
+      </a>
+      <a class="card" href="schedulers/rm.html">
+        <div style="text-align:center;width:100%">
+          <div style="font-size:2.5rem;margin-bottom:12px">⏱️</div>
+          <h3>Rate Monotonic</h3>
+          <p style="color:var(--muted);font-size:0.9rem;margin:8px 0">Priority based on task frequency</p>
+        </div>
+      </a>
+      <a class="card" href="schedulers/adaptive.html">
+        <div style="text-align:center;width:100%">
+          <div style="font-size:2.5rem;margin-bottom:12px">🧠</div>
+          <h3>Adaptive Scheduler</h3>
+          <p style="color:var(--muted);font-size:0.9rem;margin:8px 0">Dynamic feedback-based scheduling</p>
+        </div>
+      </a>
+    </div>
+
+    <section class="notes card">
+      <h3>✨ Getting Started</h3>
+      <ul>
+        <li><strong>Visualize Scheduling:</strong> See real-time task execution with color-coded timeline</li>
+        <li><strong>Interactive Tasks:</strong> Add custom tasks with different arrival times, execution times, and deadlines</li>
+        <li><strong>Live Feedback:</strong> Monitor task status and execution logs in real-time</li>
+        <li><strong>Compare Algorithms:</strong> Test different scheduling strategies and analyze performance</li>
+      </ul>
+    </section>
+
+    <section class="notes card">
+      <h3>🔍 Scheduler Comparison</h3>
+      <div style="overflow-x:auto;margin-top:12px">
+        <table style="width:100%;border-collapse:collapse;font-size:0.9rem">
+          <thead>
+            <tr style="background:rgba(59,130,246,0.1)">
+              <th style="padding:10px;text-align:left;border-bottom:2px solid var(--border)">Feature</th>
+              <th style="padding:10px;text-align:left;border-bottom:2px solid var(--border)">EDF</th>
+              <th style="padding:10px;text-align:left;border-bottom:2px solid var(--border)">RM</th>
+              <th style="padding:10px;text-align:left;border-bottom:2px solid var(--border)">Adaptive</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:8px;border-bottom:1px solid var(--border)"><strong>Priority Based On</strong></td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">Deadline</td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">Period</td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">Laxity + Boost</td>
+            </tr>
+            <tr>
+              <td style="padding:8px;border-bottom:1px solid var(--border)"><strong>Time Quantum</strong></td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">Fixed (10ms)</td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">Fixed (10ms)</td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">Dynamic (6-20ms)</td>
+            </tr>
+            <tr>
+              <td style="padding:8px;border-bottom:1px solid var(--border)"><strong>Periodic Tasks</strong></td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">❌ No</td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">✅ Yes</td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">❌ No</td>
+            </tr>
+            <tr>
+              <td style="padding:8px;border-bottom:1px solid var(--border)"><strong>Deadline Miss Handling</strong></td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">Tracked</td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">Tracked</td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">Boost Priority</td>
+            </tr>
+            <tr>
+              <td style="padding:8px;border-bottom:1px solid var(--border)"><strong>Best For</strong></td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">Real-time deadlines</td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">Periodic systems</td>
+              <td style="padding:8px;border-bottom:1px solid var(--border)">Variable workloads</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <p>Built for educational purposes • OS Scheduling Simulation © 2025</p>
+    </footer>
+  </main>
+
+  </body>
+</html>

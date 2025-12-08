@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adaptive Scheduler</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="header">
+    <h2>🧠 Adaptive / Feedback Scheduler</h2>
+    <nav><a href="../index.html">Home</a></nav>
+  </div>
+
+  <main class="container">
+    <section class="card">
+      <div style="width:100%">
+        <h3>Add Tasks</h3>
+        <form class="controls" id="taskForm">
+          <input name="name" placeholder="Task name" required />
+          <input name="arrival" type="number" placeholder="arrival" value="0" />
+          <input name="exec" type="number" placeholder="exec (ms)" value="50" min="1" />
+          <input name="deadline" type="number" placeholder="deadline" value="300" min="1" />
+          <input name="ioOps" type="number" placeholder="I/O ops (count, default 0)" value="0" min="0" />
+          <input name="ioTime" type="number" placeholder="I/O time each (ms)" value="0" min="0" />
+          <button type="submit" id="addTask">Add Task</button>
+        </form>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+          <button id="runEDF" type="button">▶ Start</button>
+          <button id="pauseEDF" type="button">⏸ Pause</button>
+          <button id="resetEDF" type="button">🔄 Reset</button>
+          <button id="exportBtn" type="button">📥 Export</button>
+          <select id="presetSelect" style="padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,0.05);color:var(--text);cursor:pointer">
+            <option value="">Load Preset...</option>
+            <option value="light">Light Workload</option>
+            <option value="medium">Medium Workload</option>
+            <option value="heavy">Heavy Workload</option>
+          </select>
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+            <input type="range" id="speedControl" min="1" max="5" value="1" style="width:100px">
+            <span id="speedLabel">Speed: 1x</span>
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+            <input type="range" id="execDelay" min="50" max="2000" value="50" step="50" style="width:100px">
+            <span id="execDelayLabel">Delay: 50ms</span>
+          </label>
+        </div>
+
+        <div id="statsContainer"></div>
+
+        <h3 style="margin-top:24px">Task Queue</h3>
+        <table id="taskTable" class="table small">
+          <thead><tr><th>Task</th><th>Arrival</th><th>Deadline</th><th>Exec</th><th>Remaining</th><th>I/O Ops</th><th>I/O Time</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody></tbody>
+        </table>
+
+        <h3 style="margin-top:20px">Execution Timeline</h3>
+        <div id="timeline" class="timeline"></div>
+
+        <div style="background:rgba(168,85,247,0.1);padding:12px;border-radius:10px;border:1px solid #a855f7;margin:16px 0">
+          <p style="margin:0;color:var(--muted)"><strong>Next Task:</strong> <span id="nextTaskInfo" style="color:#a855f7;font-weight:700">-</span></p>
+          <p style="margin:8px 0;color:var(--muted)"><strong>Dynamic Quantum:</strong> <span id="dynamicQuantumInfo" style="color:#a855f7;font-weight:700">-</span></p>
+        </div>
+
+        <h3 style="margin-top:20px">Execution Log</h3>
+        <pre id="logOutput"></pre>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="../js/adaptive_new.js"></script>
+</body>
+</html>
