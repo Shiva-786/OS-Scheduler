@@ -21,12 +21,6 @@ Adaptive-OS-Scheduler/
 └── adaptive.html
 
 
-## How to run
-
-1. Open this folder in VS Code.
-2. Create the files from this repository exact names/paths.
-3. Right-click `index.html` → Open with Live Server (recommended) or open `index.html` in your browser.
-
 ## Demos
 
 - **EDF** — Earliest Deadline First (choose ready task with earliest deadline).
